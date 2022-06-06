@@ -11,8 +11,6 @@ You can compile your app natively or for the web, and share it using Github Page
 
 ## Getting started
 
-Start by clicking "Use this template" at https://github.com/emilk/eframe_template/ or follow [these instructions](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template).
-
 Change the name of the crate: Chose a good name for your project, and change the name to it in:
 * `Cargo.toml`
     * Change the `package.name` from `eframe_template` to `your_crate`
@@ -46,15 +44,9 @@ On Linux you need to first run:
 
 `sudo apt-get install libxcb-render0-dev libxcb-shape0-dev libxcb-xfixes0-dev libspeechd-dev libxkbcommon-dev libssl-dev`
 
-On Fedora Rawhide you need to run:
-
-`dnf install clang clang-devel clang-tools-extra speech-dispatcher-devel libxkbcommon-devel pkg-config openssl-devel libxcb-devel`
-
 For running the `build_web.sh` script you also need to install `jq` and `binaryen` with your packet manager of choice.
 
 ### Compiling for the web
-
-Make sure you are using the latest version of stable rust by running `rustup update`.
 
 You can compile your app to [WASM](https://en.wikipedia.org/wiki/WebAssembly) and publish it as a web page. For this you need to set up some tools. There are a few simple scripts that help you with this:
 

@@ -1,15 +1,13 @@
 [package]
-name = "eframe_template"
-default-run = "eframe_template_bin"
+name = "blog"
+default-run = "blog_bin"
 version = "0.1.0"
-authors = ["Emil Ernerfeldt <emil.ernerfeldt@gmail.com>"]
+authors = ["Ragnyll <ragnyll@gallowzhumour.dev"]
 edition = "2021"
-rust-version = "1.60"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+rust-version = "1.61"
 
 [[bin]]
-name = "eframe_template_bin"
+name = "blog_bin"
 path = "src/main.rs"
 
 [lib]
@@ -36,11 +34,3 @@ opt-level = 2 # fast and small wasm
 
 
 [patch.crates-io]
-
-# If you want to use the bleeding edge version of egui and eframe:
-# egui = { git = "https://github.com/emilk/egui", branch = "master" }
-# eframe = { git = "https://github.com/emilk/egui", branch = "master" }
-
-# If you fork https://github.com/emilk/egui you can test with:
-# egui = { path = "../egui/egui" }
-# eframe = { path = "../egui/eframe" }
