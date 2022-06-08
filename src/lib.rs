@@ -2,10 +2,6 @@
 
 mod app;
 pub use app::TemplateApp;
-
-// ----------------------------------------------------------------------------
-// When compiling for web:
-
 #[cfg(target_arch = "wasm32")]
 use eframe::wasm_bindgen::{self, prelude::*};
 
