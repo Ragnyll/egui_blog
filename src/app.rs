@@ -17,37 +17,39 @@ impl TemplateApp {
 }
 
 impl eframe::App for TemplateApp {
-    fn update(&mut self, ctx: &egui::Context, frame: &mut eframe::Frame) {
+    fn update(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
+        // this unwrap is gonna blow up on unwrap on any other env
         let image_path = include_bytes!("/home/ragnyll/dev/blog/assets/hacker_smaller.png");
-        let retained_image = RetainedImage::from_image_bytes("profile picture", image_path).unwrap();
+        let retained_image =
+            RetainedImage::from_image_bytes("profile picture", image_path).unwrap();
 
         egui::SidePanel::left("intro_panel")
-                .resizable(false)
-                .show(ctx, |ui| {
-                    ui.vertical_centered(|ui| {
-                        ui.add_space(16.00);
-                        ui.heading("Jake Gallow");
-                        ui.add_space(4.00);
-                    });
-
-                    ui.separator();
-                    retained_image.show(ui);
-                    ui.separator();
-                    ui.vertical_centered(|ui| {
-                        ui.add_space(10.00);
-                        ui.label("Software Engineer by day");
-                        ui.label("Bboy by night");
-                        ui.add_space(10.00);
-                        ui.separator();
-
-                        ui.add_space(12.00);
-                        ui.hyperlink_to("LinkedIn", "https://www.linkedin.com/in/jakegallow/");
-                        ui.add_space(2.00);
-                        ui.hyperlink_to("Github", "https://github.com/ragnyll");
-                        ui.add_space(2.00);
-                        ui.hyperlink_to("Blog", "https://blog.gallowzhumour.dev");
-                    });
+            .resizable(false)
+            .show(ctx, |ui| {
+                ui.vertical_centered(|ui| {
+                    ui.add_space(16.00);
+                    ui.heading("Jake Gallow");
+                    ui.add_space(4.00);
                 });
+
+                ui.separator();
+                retained_image.show(ui);
+                ui.separator();
+                ui.vertical_centered(|ui| {
+                    ui.add_space(10.00);
+                    ui.label("Software Engineer by day");
+                    ui.label("Bboy by night");
+                    ui.add_space(10.00);
+                    ui.separator();
+
+                    ui.add_space(12.00);
+                    ui.hyperlink_to("LinkedIn", "https://www.linkedin.com/in/jakegallow/");
+                    ui.add_space(2.00);
+                    ui.hyperlink_to("Github", "https://github.com/ragnyll");
+                    ui.add_space(2.00);
+                    ui.hyperlink_to("Blog", "https://blog.gallowzhumour.dev");
+                });
+            });
 
         egui::CentralPanel::default().show(ctx, |ui| {
             ui.vertical_centered(|ui| {
@@ -55,8 +57,6 @@ impl eframe::App for TemplateApp {
                 ui.heading("Curriculum Vitae");
                 ui.add_space(4.00);
                 ui.separator();
-
-
             });
         });
     }
